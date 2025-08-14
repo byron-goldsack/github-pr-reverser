@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    
+    .icon {
+      font-size: 20px;
+    }
+    
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #24292f;
+    }
+    
+    .description {
+      color: #656d76;
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    
+    .button {
+      width: 100%;
+      background: #0969da;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .button:hover {
+      background: #0860ca;
+    }
+    
+    .button:disabled {
+      background: #8c959f;
+      cursor: not-allowed;
+    }
+    
+    .status {
+      margin-top: 12px;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 13px;
+      text-align: center;
+    }
+    
+    .status.success {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+    
+    .status.error {
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+    
+    .status.info {
+      background: #dbeafe;
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="icon">📄</span>
+    <span class="title">PR Conversation Reverser</span>
+  </div>
+  
+  <div class="description">
+    Reverses the order of GitHub PR conversations to show the most recent comments at the top.
+  </div>
+  
+  <button id="toggleButton" class="button">
+    Toggle Conversation Order
+  </button>
+  
+  <div id="status" class="status" style="display: none;"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Converter</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .icon-container { margin: 20px 0; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Icon Converter for PR Reverser Extension</h1>
+    <p>This page will help you create the required icon files. Right-click each canvas and save as PNG.</p>
+    
+    <div class="icon-container">
+        <h3>16x16 Icon</h3>
+        <canvas id="icon16" width="16" height="16"></canvas>
+    </div>
+    
+    <div class="icon-container">
+        <h3>32x32 Icon</h3>
+        <canvas id="icon32" width="32" height="32"></canvas>
+    </div>
+    
+    <div class="icon-container">
+        <h3>48x48 Icon</h3>
+        <canvas id="icon48" width="48" height="48"></canvas>
+    </div>
+    
+    <div class="icon-container">
+        <h3>128x128 Icon</h3>
+        <canvas id="icon128" width="128" height="128"></canvas>
+    </div>
+
+    <script>
+        // Create icon function
+        function createIcon(canvas, size) {
+            const ctx = canvas.getContext('2d');
+            const centerX = size / 2;
+            const centerY = size / 2;
+            const radius = size * 0.45;
+            
+            // Background circle
+            ctx.fillStyle = '#0366d6';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // White border
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = size * 0.02;
+            ctx.stroke();
+            
+            // Document background
+            const docWidth = size * 0.5;
+            const docHeight = size * 0.6;
+            const docX = centerX - docWidth / 2;
+            const docY = centerY - docHeight / 2;
+            
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(docX, docY, docWidth, docHeight);
+            
+            // Conversation lines
+            ctx.fillStyle = '#0366d6';
+            const lineHeight = size * 0.025;
+            const lineSpacing = size * 0.06;
+            const lineStartX = docX + size * 0.05;
+            const lineStartY = docY + size * 0.08;
+            
+            // Draw several conversation lines
+            for (let i = 0; i < 6; i++) {
+                const lineWidth = (size * 0.3) + (Math.sin(i) * size * 0.1);
+                ctx.fillRect(lineStartX, lineStartY + (i * lineSpacing), lineWidth, lineHeight);
+            }
+            
+            // Arrow indicating reversal (simplified for small sizes)
+            if (size >= 32) {
+                ctx.strokeStyle = '#ffffff';
+                ctx.lineWidth = size * 0.025;
+                ctx.lineCap = 'round';
+                
+                // Up arrow
+                const arrowSize = size * 0.1;
+                const arrowX = centerX + radius * 0.6;
+                const arrowY1 = centerY - radius * 0.3;
+                
+                ctx.beginPath();
+                ctx.moveTo(arrowX - arrowSize, arrowY1 + arrowSize);
+                ctx.lineTo(arrowX, arrowY1);
+                ctx.lineTo(arrowX + arrowSize, arrowY1 + arrowSize);
+                ctx.stroke();
+                
+                // Down arrow
+                const arrowY2 = centerY + radius * 0.3;
+                ctx.beginPath();
+                ctx.moveTo(arrowX - arrowSize, arrowY2 - arrowSize);
+                ctx.lineTo(arrowX, arrowY2);
+                ctx.lineTo(arrowX + arrowSize, arrowY2 - arrowSize);
+                ctx.stroke();
+            }
+        }
+        
+        // Create all icons
+        createIcon(document.getElementById('icon16'), 16);
+        createIcon(document.getElementById('icon32'), 32);
+        createIcon(document.getElementById('icon48'), 48);
+        createIcon(document.getElementById('icon128'), 128);
+        
+        console.log('Icons generated! Right-click each canvas and save as PNG with the appropriate filename.');
+    </script>
+</body>
+</html>

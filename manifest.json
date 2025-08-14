@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub PR Conversation Reverser",
+  "version": "1.0.0",
+  "description": "Reverse the order of GitHub PR conversations to show most recent comments first",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*/pull/*",
+        "https://github.com/*/issues/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Toggle PR conversation order"
+  }
+}

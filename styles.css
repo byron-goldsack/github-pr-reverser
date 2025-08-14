@@ -1,0 +1,62 @@
+/* PR Conversation Reverser Styles */
+
+.pr-reverser-indicator {
+  background: linear-gradient(135deg, #0366d6, #0256cc);
+  color: white;
+  padding: 8px 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(3, 102, 214, 0.3);
+  border: 1px solid #0366d6;
+}
+
+.pr-reverser-indicator span:first-child {
+  font-size: 16px;
+}
+
+.pr-reverser-indicator button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: auto;
+  transition: background-color 0.2s ease;
+}
+
+.pr-reverser-indicator button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.pr-reverser-indicator button:active {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .pr-reverser-indicator {
+    background: linear-gradient(135deg, #1f6feb, #1a5bd6);
+    border-color: #1f6feb;
+    box-shadow: 0 1px 3px rgba(31, 111, 235, 0.4);
+  }
+}
+
+/* GitHub's dark theme */
+[data-color-mode="dark"] .pr-reverser-indicator {
+  background: linear-gradient(135deg, #238636, #1f7f32);
+  border-color: #238636;
+  box-shadow: 0 1px 3px rgba(35, 134, 54, 0.4);
+}
+
+/* Smooth transitions for reordering */
+.timeline-comment-wrapper,
+.js-timeline-item {
+  transition: transform 0.3s ease-out;
+}
