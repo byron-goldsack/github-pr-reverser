@@ -1,4 +1,4 @@
-# GitHub PR Conversation Reverser - Edge Extension
+# GitHub PR Conversation Reverser
 
 A Browser extension that reverses the order of GitHub pull request conversations so the most recent comments appear at the top.
 Build primarily for Microsoft Edge, but should work with any chromium based browser that supports Manifest V3
@@ -13,17 +13,6 @@ Build primarily for Microsoft Edge, but should work with any chromium based brow
 
 ## Installation
 
-### Option 1: Load as Unpacked Extension (Recommended for Development)
-
-1. Open Microsoft Edge
-2. Navigate to `edge://extensions/`
-3. Enable "Developer mode" in the bottom left
-4. Click "Load unpacked"
-5. Select the `GithubPRsequencer` folder
-6. The extension should now appear in your extensions list
-
-### Option 2: Manual Installation
-
 1. Download or clone this repository
 2. Open Edge and go to `edge://extensions/`
 3. Turn on "Developer mode"
@@ -37,36 +26,6 @@ Build primarily for Microsoft Edge, but should work with any chromium based brow
 3. Look for the blue indicator at the top of the conversation showing "Conversation order reversed - newest first"
 4. Click the toggle button (↕️) in the indicator to switch between orders
 5. Alternatively, click the extension icon in the toolbar and use the popup to toggle
-
-## Files Structure
-
-```
-GithubPRsequencer/
-├── manifest.json          # Extension configuration
-├── content.js            # Main functionality script
-├── styles.css            # Extension styling
-├── popup.html            # Extension popup interface
-├── popup.js              # Popup functionality
-├── create-icons.html     # Helper for creating icons (optional)
-└── README.md            # This file
-```
-
-## How It Works
-
-The extension uses a content script that:
-
-1. **Detects GitHub Pages**: Automatically activates on GitHub PR and issue pages
-2. **Finds Conversation Elements**: Locates timeline comments and conversation items
-3. **Reverses Order**: Reorders DOM elements to show newest comments first
-4. **Maintains Functionality**: Preserves all GitHub functionality while reordering
-5. **Handles Dynamic Content**: Watches for new comments and maintains order
-6. **Provides Toggle**: Allows switching back to original order
-
-## Browser Compatibility
-
-- ✅ Microsoft Edge (Chromium-based)
-- ✅ Google Chrome (with minor modifications)
-- ✅ Other Chromium-based browsers
 
 ## Troubleshooting
 
@@ -104,4 +63,5 @@ Feel free to submit issues or pull requests if you find bugs or have suggestions
 ## License
 
 This project is open source and available under the MIT License.
+
 
