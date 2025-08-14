@@ -1,6 +1,7 @@
 # GitHub PR Conversation Reverser - Edge Extension
 
-A Microsoft Edge extension that reverses the order of GitHub pull request conversations so the most recent comments appear at the top.
+A Browser extension that reverses the order of GitHub pull request conversations so the most recent comments appear at the top.
+Build primarily for Microsoft Edge, but should work with any chromium based browser that supports Manifest V3
 
 ## Features
 
@@ -103,3 +104,4 @@ Feel free to submit issues or pull requests if you find bugs or have suggestions
 ## License
 
 This project is open source and available under the MIT License.
+
