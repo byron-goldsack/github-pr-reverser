@@ -35,33 +35,6 @@ Build primarily for Microsoft Edge, but should work with any chromium based brow
 3. Check that the extension is enabled in `edge://extensions/`
 4. Look for any error messages in the browser console (F12 → Console)
 
-### Comments Not Reversing?
-1. Wait a moment for the page to fully load
-2. Try clicking the toggle button in the blue indicator
-3. Use the extension popup to manually toggle
-4. Some very old GitHub layouts might not be supported
 
-### Performance Issues?
-The extension is lightweight and shouldn't affect page performance. If you experience issues:
-1. Try disabling and re-enabling the extension
-2. Clear browser cache
-3. Check for conflicting extensions
-
-## Development
-
-To modify or enhance the extension:
-
-1. Edit the relevant files (`content.js`, `styles.css`, etc.)
-2. Go to `edge://extensions/`
-3. Click the reload button on the extension
-4. Test your changes on a GitHub PR page
-
-## Contributing
-
-Feel free to submit issues or pull requests if you find bugs or have suggestions for improvements!
-
-## License
-
-This project is open source and available under the MIT License.
 
 
